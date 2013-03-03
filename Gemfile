@@ -1,6 +1,7 @@
 source 'https://rubygems.org'
 
 gem 'rails', '3.2.12'
+gem 'validates_timeliness', '~> 3.0'
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
@@ -18,6 +19,22 @@ group :assets do
   # gem 'therubyracer', :platforms => :ruby
 
   gem 'uglifier', '>= 1.0.3'
+end
+
+# Gems used in testing
+group :test do
+	gem 'shoulda'
+	gem 'shoulda-matchers'
+	gem 'factory_girl_rails'
+	gem 'mocha'
+	gem 'cucumber-rails'
+	gem 'capybara'
+	gem 'database_cleaner'
+	gem 'launchy'
+	gem 'email_spec'
+	gem 'nokogiri'
+	gem 'simplecov'
+	gem 'tconsole', '1.1.1'
 end
 
 gem 'jquery-rails'

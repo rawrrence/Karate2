@@ -1,0 +1,30 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Section:</b>
+  <%= @registration.section_id %>
+</p>
+
+<p>
+  <b>Student:</b>
+  <%= @registration.student_id %>
+</p>
+
+<p>
+  <b>Date:</b>
+  <%= @registration.date %>
+</p>
+
+<p>
+  <b>Fee paid:</b>
+  <%= @registration.fee_paid %>
+</p>
+
+<p>
+  <b>Final standing:</b>
+  <%= @registration.final_standing %>
+</p>
+
+
+<%= link_to 'Edit', edit_registration_path(@registration) %> |
+<%= link_to 'Back', registrations_path %>

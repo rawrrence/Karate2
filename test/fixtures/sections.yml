@@ -1,0 +1,21 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  event_id: 1
+  min_age: 1
+  max_age: 1
+  min_rank: 1
+  max_rank: 1
+  round_time: 2013-03-02 20:03:08
+  location: MyString
+  active: false
+
+two:
+  event_id: 1
+  min_age: 1
+  max_age: 1
+  min_rank: 1
+  max_rank: 1
+  round_time: 2013-03-02 20:03:08
+  location: MyString
+  active: false

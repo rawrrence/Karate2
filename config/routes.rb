@@ -1,4 +1,16 @@
 Karate2::Application.routes.draw do
+  resources :students
+
+
+  resources :events
+
+
+  resources :registrations
+
+
+  resources :sections
+
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

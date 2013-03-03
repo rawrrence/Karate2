@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  section_id: 1
+  student_id: 1
+  date: 2013-03-02
+  fee_paid: false
+  final_standing: 1
+
+two:
+  section_id: 1
+  student_id: 1
+  date: 2013-03-02
+  fee_paid: false
+  final_standing: 1

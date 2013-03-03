@@ -1,0 +1,45 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Event:</b>
+  <%= @section.event_id %>
+</p>
+
+<p>
+  <b>Min age:</b>
+  <%= @section.min_age %>
+</p>
+
+<p>
+  <b>Max age:</b>
+  <%= @section.max_age %>
+</p>
+
+<p>
+  <b>Min rank:</b>
+  <%= @section.min_rank %>
+</p>
+
+<p>
+  <b>Max rank:</b>
+  <%= @section.max_rank %>
+</p>
+
+<p>
+  <b>Round time:</b>
+  <%= @section.round_time %>
+</p>
+
+<p>
+  <b>Location:</b>
+  <%= @section.location %>
+</p>
+
+<p>
+  <b>Active:</b>
+  <%= @section.active %>
+</p>
+
+
+<%= link_to 'Edit', edit_section_path(@section) %> |
+<%= link_to 'Back', sections_path %>
