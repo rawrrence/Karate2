@@ -38,11 +38,11 @@ class RegistrationTest < ActiveSupport::TestCase
 			
 			@sec1 = FactoryGirl.create(:section, :event => @breaking, :min_age => 10, :max_age => 30, :min_rank => 1, :max_rank => 9)
 			@sec2 = FactoryGirl.create(:section, :event => @reading, :min_age => 13, :max_age => 25, :min_rank => 1, :max_rank => 50)
-			@sec3 = FactoryGirl.create(:section, :event => @breaking, :min_age => 6, :max_age => 50, :min_rank => 1, :max_rank  => 49)
+			@sec3 = FactoryGirl.create(:section, :event => @dancing, :min_age => 6, :max_age => 50, :min_rank => 1, :max_rank  => 49)
 		
 			@reg_ken2 = FactoryGirl.create(:registration, :section => @sec2, :student => @kenneth, :date => Date.today.weeks_ago(4), :fee_paid => true, :final_standing => 3)
 			@reg_ken3 = FactoryGirl.create(:registration, :section => @sec3, :student => @kenneth, :date => Date.today.weeks_ago(2), :fee_paid => true, :final_standing => 5)
-			@reg_kim1 = FactoryGirl.create(:registration, :section => @sec3, :student => @kim, :date => Date.today.weeks_ago(2), :fee_paid => false, :final_standing => 9)
+			@reg_kim1 = FactoryGirl.create(:registration, :section => @sec1, :student => @kim, :date => Date.today.weeks_ago(2), :fee_paid => false, :final_standing => 9)
 			@reg_kim3 = FactoryGirl.create(:registration, :section => @sec3, :student => @kim, :date => Date.today.weeks_ago(8), :fee_paid => true, :final_standing => 3)
 			@reg_pete1 = FactoryGirl.create(:registration, :section => @sec1, :student => @peter, :date => Date.today.weeks_ago(5), :fee_paid => true, :final_standing => 11)
 			@reg_pete3 = FactoryGirl.create(:registration, :section => @sec3, :student => @peter, :date => Date.today.weeks_ago(3), :fee_paid => false, :final_standing => 20)
@@ -96,7 +96,7 @@ class RegistrationTest < ActiveSupport::TestCase
 		
 		# test scope by_event_name
 		should "order the registrations by event" do
-			assert_equal ["Breaking", "Breaking", "Breaking", "Breaking", "Breaking", "Reading", "Reading"], Registration.by_event_name.map{|r| r.section.name}
+			assert_equal ["Breaking", "Breaking", "Dancing", "Dancing", "Dancing", "Reading", "Reading"], Registration.by_event_name.map{|r| r.section.event.name}
 		end
 	end
 	

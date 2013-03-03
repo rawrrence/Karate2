@@ -17,7 +17,7 @@ class Registration < ActiveRecord::Base
 	scope :for_student, lambda {|id| where('student_id = ?', id)}
 	scope :by_student, joins(:student).order('last_name, first_name')
 	scope :by_date, joins(:student).order('date, last_name, first_name')
-	scope :by_event_name, joins(:event, :section).order(:name)
+	scope :by_event_name, joins(:event).order('name')
 	
 	
 	# student must have appropriate rank to be registered
