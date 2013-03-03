@@ -22,6 +22,6 @@ class Section < ActiveRecord::Base
 	
 	
 	def event_active
-		return self.event.active
+		return self.event == nil or self.event.active
 	end
 end
