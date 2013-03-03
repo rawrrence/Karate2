@@ -22,6 +22,9 @@ class Section < ActiveRecord::Base
 	
 	
 	def event_active
-		return self.event == nil or self.event.active
+		active_events = Event.active.all.map{|e| e.id}
+    unless active_events.include?(self.event_id)
+			errors.add(:event, "is not an active event")
+		end
 	end
 end
