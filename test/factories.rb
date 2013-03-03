@@ -15,8 +15,6 @@ FactoryGirl.define do
 		max_age 10
 		min_rank 5
 		max_rank 7
-		round_time Time.local(2010, 12, 3, 12, 10, 0)
-		location "mat 2"
 		active true
 	end
 	

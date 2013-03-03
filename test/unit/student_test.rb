@@ -38,13 +38,6 @@ class StudentTest < ActiveSupport::TestCase
 	
 	context "Creating 11 different students" do
 		setup do
-			# @breaking = FactoryGirl.create(:event)
-			# @tourney = FactoryGirl.create(:tournament)
-			# @sec = FactoryGirl.create(:section, :event => @breaking, :tournament => @tourney, :min_age => 10, :max_age => 20, :min_rank => 1, :max_rank => 5)
-			# @regkim = FactoryGirl.create(:registration, :section => @sec, :student => @kim)
-			# @regpeter = FactoryGirl.create(:registration, :section => @sec, :student => @peter)
-			# @regsharon = FactoryGirl.create(:registration, :section => @sec, :student => @sharon)
-
 			@kenneth = FactoryGirl.create(:student)
 			@kim = FactoryGirl.create(:student, :first_name => "Kim", :last_name => "Park", :date_of_birth => Date.today.years_ago(14), :rank => 1, :waiver_signed => false)
 			@peter = FactoryGirl.create(:student, :first_name => "Peter", :last_name => "Xiao", :date_of_birth => Date.today.years_ago(12), :active => false, :rank => 5)
@@ -56,6 +49,13 @@ class StudentTest < ActiveSupport::TestCase
 			@cindy = FactoryGirl.create(:student, :first_name => "Cindy", :last_name => "Zhang", :date_of_birth => Date.today.years_ago(20), :rank => 8)
 			@chris = FactoryGirl.create(:student, :first_name => "Chris", :last_name => "Zhu", :date_of_birth => Date.today.years_ago(130), :active => false, :rank => 1)
 			@sharon = FactoryGirl.create(:student, :first_name => "Sharon", :last_name => "Chang", :date_of_birth => Date.today.years_ago(18), :rank => 3)	
+
+			@breaking = FactoryGirl.create(:event)
+			@sec = FactoryGirl.create(:section, :event => @breaking, :min_age => 10, :max_age => 20, :min_rank => 1, :max_rank => 5)
+			@regkim = FactoryGirl.create(:registration, :section => @sec, :student => @kim, :date => Date.today.weeks_ago(2), :fee_paid => true, :final_standing => 2)
+			@regpeter = FactoryGirl.create(:registration, :section => @sec, :student => @peter, :date => Date.today.weeks_ago(2), :fee_paid => true, :final_standing => 6)
+			@regsharon = FactoryGirl.create(:registration, :section => @sec, :student => @sharon, :date => Date.today.weeks_ago(2), :fee_paid => true, :final_standing => 4)
+
 		end
 		
 		teardown do
@@ -70,11 +70,11 @@ class StudentTest < ActiveSupport::TestCase
 			@cindy.destroy
 			@chris.destroy
 			@sharon.destroy
-			# @breaking.destroy
-			# @sec.destroy
-			# @regkim.destroy
-			# @regpeter.destroy
-			# @regsharon.destroy
+			@breaking.destroy
+			@sec.destroy
+			@regkim.destroy
+			@regpeter.destroy
+			@regsharon.destroy
 		end
 		
 		# test scope alphabetical
@@ -181,10 +181,10 @@ class StudentTest < ActiveSupport::TestCase
 		end
 		
 		# test the registered_for_section method
-		# should "shows 3 students registered for section 1" do
-			# assert_equal 3, Student.registered_for_section(1).size
-			# assert_equal ["Sharon", "Kim", "Peter"], Student.registered_for_section(1).alphabetical.map{|s| s.first_name}
-		# end
+		should "shows 3 students registered for section 1" do
+			assert_equal 3, Student.registered_for_section(1).size
+			assert_equal ["Sharon", "Kim", "Peter"], Student.registered_for_section(1).alphabetical.map{|s| s.first_name}
+		end
 		
 		# test the callback reformat_phone
 		should "shows the stripped phone number" do
