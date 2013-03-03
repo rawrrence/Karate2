@@ -1,4 +1,7 @@
 Karate2::Application.routes.draw do
+  resources :sections
+
+
   resources :students
 
 
@@ -6,9 +9,6 @@ Karate2::Application.routes.draw do
 
 
   resources :registrations
-
-
-  resources :sections
 
 
   # The priority is based upon order of creation:

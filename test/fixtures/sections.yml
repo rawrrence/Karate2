@@ -6,8 +6,6 @@ one:
   max_age: 1
   min_rank: 1
   max_rank: 1
-  round_time: 2013-03-02 20:03:08
-  location: MyString
   active: false
 
 two:
@@ -16,6 +14,4 @@ two:
   max_age: 1
   min_rank: 1
   max_rank: 1
-  round_time: 2013-03-02 20:03:08
-  location: MyString
   active: false

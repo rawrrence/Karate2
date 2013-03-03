@@ -37,10 +37,4 @@ class SectionTest < ActiveSupport::TestCase
 	should_not allow_value(-2).for(:max_rank)
 	should_not allow_value("ten").for(:max_rank)
 	
-	# test for round_time
-	should allow_value(Time.now).for(:round_time)
-	should allow_value(Time.local(2012, 1, 1, 1, 1, 1)).for(:round_time)
-	should_not allow_value("12:30").for(:round_time)
-	should_not allow_value(4).for(:round_time)
-	
 end

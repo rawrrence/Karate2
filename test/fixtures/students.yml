@@ -1,19 +1,19 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
 
 one:
-  first_name: MyString
-  last_name: MyString
+  first_name: 
+  last_name: 
   date_of_birth: 2013-03-02
-  phone: MyString
   rank: 1
+  phone: MyString
   waiver_signed: false
   active: false
 
 two:
-  first_name: MyString
-  last_name: MyString
+  first_name: 
+  last_name: 
   date_of_birth: 2013-03-02
-  phone: MyString
   rank: 1
+  phone: MyString
   waiver_signed: false
   active: false

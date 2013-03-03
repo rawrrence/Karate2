@@ -18,7 +18,7 @@ class SectionsControllerTest < ActionController::TestCase
 
   test "should create section" do
     assert_difference('Section.count') do
-      post :create, section: { active: @section.active, event_id: @section.event_id, location: @section.location, max_age: @section.max_age, max_rank: @section.max_rank, min_age: @section.min_age, min_rank: @section.min_rank, round_time: @section.round_time }
+      post :create, section: { active: @section.active, event_id: @section.event_id, max_age: @section.max_age, max_rank: @section.max_rank, min_age: @section.min_age, min_rank: @section.min_rank }
     end
 
     assert_redirected_to section_path(assigns(:section))
@@ -35,7 +35,7 @@ class SectionsControllerTest < ActionController::TestCase
   end
 
   test "should update section" do
-    put :update, id: @section, section: { active: @section.active, event_id: @section.event_id, location: @section.location, max_age: @section.max_age, max_rank: @section.max_rank, min_age: @section.min_age, min_rank: @section.min_rank, round_time: @section.round_time }
+    put :update, id: @section, section: { active: @section.active, event_id: @section.event_id, max_age: @section.max_age, max_rank: @section.max_rank, min_age: @section.min_age, min_rank: @section.min_rank }
     assert_redirected_to section_path(assigns(:section))
   end
 

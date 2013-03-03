@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130303014825) do
+ActiveRecord::Schema.define(:version => 20130303040457) do
 
   create_table "events", :force => true do |t|
     t.string   "name"
@@ -36,8 +36,6 @@ ActiveRecord::Schema.define(:version => 20130303014825) do
     t.integer  "max_age"
     t.integer  "min_rank"
     t.integer  "max_rank"
-    t.time     "round_time"
-    t.string   "location"
     t.boolean  "active"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
@@ -47,8 +45,8 @@ ActiveRecord::Schema.define(:version => 20130303014825) do
     t.string   "first_name"
     t.string   "last_name"
     t.date     "date_of_birth"
-    t.string   "phone"
     t.integer  "rank"
+    t.string   "phone"
     t.boolean  "waiver_signed"
     t.boolean  "active"
     t.datetime "created_at",    :null => false
