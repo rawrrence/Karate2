@@ -43,9 +43,9 @@ class Student < ActiveRecord::Base
 		now.year - date_of_birth.year - ((now.month > date_of_birth.month || (now.month == date_of_birth.month && now.day >= date_of_birth.day)) ? 0 : 1)
 	end
 	
-	def registered_for_section(id)
-		sections = registrations.all.map{|r| r.section_id == id}
-		return sections.map{|s| s.student_id}
+	def self.registered_for_section(id)
+		regs = Registration.all.select{|r| r.section_id == id}
+		return regs.map{|r| r.student }
 	end
 
 	private

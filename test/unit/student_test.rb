@@ -182,8 +182,8 @@ class StudentTest < ActiveSupport::TestCase
 		
 		# test the registered_for_section method
 		should "shows 3 students registered for section 1" do
-			assert_equal 3, Student.registered_for_section(1).size
-			assert_equal ["Sharon", "Kim", "Peter"], Student.registered_for_section(1).alphabetical.map{|s| s.first_name}
+			assert_equal 3, Student.registered_for_section(@sec.id).size
+			assert_equal ["Kim", "Peter", "Sharon"], Student.registered_for_section(1).sort.map{|s| s.first_name}
 		end
 		
 		# test the callback reformat_phone
