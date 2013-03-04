@@ -95,6 +95,18 @@ class SectionTest < ActiveSupport::TestCase
 			assert_equal 4, Section.for_age(15).size
 			assert_equal 0, Section.for_age(50).size
 		end
+
+		# test min_max_age validation
+		should "shows that a section with a smaller max_age than min_age can not be created" do
+			bad_section = FactoryGirl.build(:section, :event => @running, :min_age => 20, :max_age => 18)
+			deny bad_section.valid?
+		end
+		
+		# test min_max_rank validation
+		should "shows that a section with a smaller max_rank than min_rank can not be created" do
+			bad_section = FactoryGirl.build(:section, :event => @running, :min_rank => 20, :max_rank => 18)
+			deny bad_section.valid?
+		end
 		
 		# test event_active validation
 		should "shows that there cannot be a section created with an inactive event" do
